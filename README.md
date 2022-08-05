@@ -77,4 +77,7 @@ resource "docker_container" "nginx" {
  $ terraform destroy
 ```
 
+### References
+
+- <a href="https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/docker-get-started">Terraform Installation</a>
 
