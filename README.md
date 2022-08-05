@@ -5,7 +5,7 @@
 ### Installing Terraform in window's machine
 ---
 
-- Download Terraform - `<https://www.terraform.io/downloads>` `Amd64 file`
+- Download Terraform - <https://www.terraform.io/downloads> `Amd64 file`
 - Unzip the downloaded file and move the exe file to C drive `<C:\terraform>`
 - Set the terraform binary application file to the enviromental variable path
 - Verify the installation `terraform -help`
@@ -65,7 +65,7 @@ resource "docker_container" "nginx" {
  $ terraform apply 
 ```
   
-- Verify the existence of the `NGINX` container by visiting `<http://localhost:8000>` in your web browser or running docker ps to see the container.
+- Verify the existence of the `NGINX` container by visiting <http://localhost:8000> in your web browser or running docker ps to see the container.
 
 ```powershell
  $ docker ps 
