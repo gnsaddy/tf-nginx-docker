@@ -21,6 +21,6 @@ resource "docker_container" "nginx" {
   name  = "tf-docker-nginx"
   ports {
     internal = 80
-    external = 8006
+    external = 8000
   }
 }
