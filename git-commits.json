@@ -1,0 +1,52 @@
+[
+    {
+        "commit": "a836debd5138acb669af39261440f5b717231739",
+        "author": "Aditya Raj <aditya.x510@gmail.com>",
+        "date": "Fri Aug 12 07:38:54 2022 +0530",
+        "message": "adding-rollback-script",
+        "files": [
+            ".terraform.lock.hcl",
+            "commit.sh",
+            "generate.sh",
+            "git-commits.json",
+            "main.tf",
+            "note.txt",
+            "rollbackState.sh"
+        ]
+    },
+    {
+        "commit": "a5cba711532b3196f2fd7267bec71c320a877746",
+        "author": "Aditya Raj <aditya.x510@gmail.com>",
+        "date": "Fri Aug 5 12:49:31 2022 +0530",
+        "message": "nginx-container",
+        "files": ["README.md"]
+    },
+    {
+        "commit": "d2969f777bbab5a1d4636b2a8ad04f7c5306d10a",
+        "author": "Aditya Raj <aditya.x510@gmail.com>",
+        "date": "Fri Aug 5 12:46:23 2022 +0530",
+        "message": "nginx-container",
+        "files": ["README.md"]
+    },
+    {
+        "commit": "2c55a97c39f8df045cbfa2a1ac88f5f810339065",
+        "author": "Aditya Raj <aditya.x510@gmail.com>",
+        "date": "Fri Aug 5 12:45:48 2022 +0530",
+        "message": "nginx-container",
+        "files": ["README.md"]
+    },
+    {
+        "commit": "1467daee1c24d4fe6332c9f5f940c375033cee56",
+        "author": "Aditya Raj <aditya.x510@gmail.com>",
+        "date": "Fri Aug 5 12:43:20 2022 +0530",
+        "message": "nginx-container",
+        "files": ["README.md", "main.tf"]
+    },
+    {
+        "commit": "64d66fdace7247662fa723a9b961f2f8babedb99",
+        "author": "Aditya Raj <aditya.x510@gmail.com>",
+        "date": "Fri Aug 5 12:21:39 2022 +0530",
+        "message": "added-configuration-for-TF",
+        "files": [".gitignore", ".terraform.lock.hcl", "main.tf"]
+    }
+]
