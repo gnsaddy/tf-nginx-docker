@@ -1,5 +1,12 @@
 [
     {
+        "commit": "367bee1f71e381ed4304b7e0f9d20ae643775069",
+        "author": "Aditya Raj <aditya.x510@gmail.com>",
+        "date": "Fri Aug 12 08:23:06 2022 +0530",
+        "message": "revert-to-value-5",
+        "files": ["git-commits.json"]
+    },
+    {
         "commit": "c3396c939543bef2891f3866486f5a415433d0d9",
         "author": "Aditya Raj <aditya.x510@gmail.com>",
         "date": "Fri Aug 12 08:19:00 2022 +0530",
