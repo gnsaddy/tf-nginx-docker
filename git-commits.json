@@ -1,16 +1,13 @@
 [
     {
-        "commit": "a836debd5138acb669af39261440f5b717231739",
+        "commit": "f5998187a2eea5c106e39f33044c17ae670b9401",
         "author": "Aditya Raj <aditya.x510@gmail.com>",
-        "date": "Fri Aug 12 07:38:54 2022 +0530",
+        "date": "Fri Aug 12 07:48:43 2022 +0530",
         "message": "adding-rollback-script",
         "files": [
-            ".terraform.lock.hcl",
             "commit.sh",
             "generate.sh",
             "git-commits.json",
-            "main.tf",
-            "note.txt",
             "rollbackState.sh"
         ]
     },
