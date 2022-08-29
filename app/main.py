@@ -7,30 +7,16 @@ from pandas.io.json import json_normalize
 import pandas as pd
 import numpy as np
 
-# engine = create_engine(
-#     'oracle+cx_oracle://username:password@ceres-scan:1521/?service_name=hades', max_identifier_length=128)
-
-# DBSession = sessionmaker(bind=engine)
-# session = DBSession()
-
-
-# with engine.connect() as connection:
-#     with connection.begin():
-#         data.to_sql('git_commits', con=engine, schema='myschema',
-#                     if_exists='append', index=False)
-
-
-# session.commit()
-# session.close()
-
 GITHUB_USERNAME = 'gnsaddy'
-GITHUB_TOKEN = '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'
+GITHUB_TOKEN = ''
 
 github_api = "https://api.github.com"
 gh_session = requests.Session()
 gh_session.auth = (GITHUB_USERNAME, GITHUB_TOKEN)
-
 url = github_api + '/repos/gnsaddy/tf-nginx-docker/commits'
+
+commits = gh_session.get(url=url)
+commits_json = commits.json()
 
 
 def commits_of_repo_github(repo, owner, api):
@@ -38,19 +24,23 @@ def commits_of_repo_github(repo, owner, api):
     next = True
     i = 1
     while next == True:
-        url = api + \
-            '/repos/{}/{}/commits?page={}&per_page=100'.format(owner, repo, i)
+        url = f"{api}/repos/{owner}/{repo}/commits?page={i}"
         commit_pg = gh_session.get(url=url)
 
-        commit_pg_list = [
-            dict(item, **{'repo_name': '{}'.format(repo)}) for item in commit_pg.json()]
-        commit_pg_list = [
-            dict(item, **{'owner': '{}'.format(owner)}) for item in commit_pg_list]
-        commits = commits + commit_pg_list
-        if 'Link' in commit_pg.headers:
-            if 'rel="next"' not in commit_pg.headers['Link']:
-                next = False
-        i = i + 1
+        if commit_pg.status_code == 200:
+            commit_pg_list = [
+                dict(item, **{'repo_name': '{}'.format(repo)}) for item in commit_pg.json()]
+            commit_pg_list = [
+                dict(item, **{'owner': '{}'.format(owner)}) for item in commit_pg_list]
+            commits = commits + commit_pg_list
+            if 'Link' in commit_pg.headers:
+                if 'rel="next"' not in commit_pg.headers['Link']:
+                    next = False
+            i = i + 1
+
+        else:
+            next = False
+            print(f"Error: {commit_pg.status_code} - {commit_pg.reason}")
 
     commit_json = []
     for data in commits:
@@ -91,8 +81,6 @@ def commits_of_repo_github(repo, owner, api):
 
         # insert to json file
         df.to_json('git-commits.json', orient='records')
-
-        # insert to mysql database
 
     return commits
 
