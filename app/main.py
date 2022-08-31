@@ -9,6 +9,7 @@ import numpy as np
 
 GITHUB_USERNAME = 'gnsaddy'
 GITHUB_TOKEN = ''
+GITHUB_API = 'https://api.github.com'
 
 github_api = "https://api.github.com"
 gh_session = requests.Session()
